@@ -19,6 +19,7 @@ import org.openqa.selenium.Keys as Keys
 //open browser
 WebUI.openBrowser('')
 
+//open url
 WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/')
 
 WebUI.click(findTestObject('Object Repository/orangehrm/login_page/Page_OrangeHRM/span_Username'))
@@ -30,7 +31,7 @@ WebUI.setEncryptedText(findTestObject('Object Repository/orangehrm/login_page/Pa
 
 WebUI.click(findTestObject('Object Repository/orangehrm/login_page/Page_OrangeHRM/input_Password_Submit'))
 
-WebUI.click(findTestObject('Object Repository/orangehrm/login_page/Page_OrangeHRM/a_Welcome Paul'))
+WebUI.click(findTestObject('orangehrm/login_page/Page_OrangeHRM/a_Welcome'))
 
 WebUI.click(findTestObject('Object Repository/orangehrm/login_page/Page_OrangeHRM/a_Logout'))
 

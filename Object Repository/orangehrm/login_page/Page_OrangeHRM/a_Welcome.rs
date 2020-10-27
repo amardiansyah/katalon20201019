@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>a_Welcome Paul</name>
+   <name>a_Welcome</name>
    <tag></tag>
    <elementGuidId>2ca95de3-d886-49d4-a9dc-c9ce63806632</elementGuidId>
+   <imagePath></imagePath>
    <selectorCollection>
       <entry>
          <key>CSS</key>
          <value>#welcome</value>
       </entry>
       <entry>
+         <key>BASIC</key>
+         <value>//*[@href = '#' and @id = 'welcome' and (text() = 'Welcome Paul' or . = 'Welcome Paul')]</value>
+      </entry>
+      <entry>
          <key>XPATH</key>
          <value>//a[@id='welcome']</value>
+      </entry>
+      <entry>
+         <key>IMAGE</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
