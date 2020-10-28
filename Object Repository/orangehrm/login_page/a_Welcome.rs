@@ -4,8 +4,10 @@
    <name>a_Welcome</name>
    <tag></tag>
    <elementGuidId>2ca95de3-d886-49d4-a9dc-c9ce63806632</elementGuidId>
-   <imagePath></imagePath>
    <selectorCollection>
+      <entry>
+         <key>IMAGE</key>
+      </entry>
       <entry>
          <key>CSS</key>
          <value>#welcome</value>
@@ -17,10 +19,6 @@
       <entry>
          <key>XPATH</key>
          <value>//a[@id='welcome']</value>
-      </entry>
-      <entry>
-         <key>IMAGE</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

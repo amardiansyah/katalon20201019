@@ -22,18 +22,20 @@ WebUI.openBrowser('')
 //open url
 WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/')
 
-WebUI.click(findTestObject('Object Repository/orangehrm/login_page/Page_OrangeHRM/span_Username'))
+WebUI.click(findTestObject('orangehrm/login_page/span_Username'))
 
-WebUI.setText(findTestObject('Object Repository/orangehrm/login_page/Page_OrangeHRM/input_LOGIN Panel_txtUsername'), 'Admin')
+WebUI.setText(findTestObject('orangehrm/login_page/input_LOGIN Panel_txtUsername'), 'Admin')
 
-WebUI.setEncryptedText(findTestObject('Object Repository/orangehrm/login_page/Page_OrangeHRM/input_Username_txtPassword'), 
+WebUI.setEncryptedText(findTestObject('orangehrm/login_page/input_Username_txtPassword'), 
     'hUKwJTbofgPU9eVlw/CnDQ==')
 
-WebUI.click(findTestObject('Object Repository/orangehrm/login_page/Page_OrangeHRM/input_Password_Submit'))
+WebUI.takeScreenshot()
 
-WebUI.click(findTestObject('orangehrm/login_page/Page_OrangeHRM/a_Welcome'))
+WebUI.click(findTestObject('orangehrm/login_page/input_Password_Submit'))
 
-WebUI.click(findTestObject('Object Repository/orangehrm/login_page/Page_OrangeHRM/a_Logout'))
+WebUI.click(findTestObject('orangehrm/login_page/a_Welcome'))
+
+WebUI.click(findTestObject('orangehrm/login_page/a_Logout'))
 
 WebUI.closeBrowser()
 
