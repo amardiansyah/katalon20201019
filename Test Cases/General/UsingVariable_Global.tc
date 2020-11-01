@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>UsingVariable_Global</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>99fb46cf-8c4d-4274-9498-a0c793eb265e</testCaseGuid>
+   <variable>
+      <defaultValue>'Admin'</defaultValue>
+      <description></description>
+      <id>886779a8-b397-4f61-981d-ef594bd60c31</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+</TestCaseEntity>
