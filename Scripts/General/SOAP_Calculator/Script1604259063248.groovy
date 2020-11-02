@@ -15,19 +15,15 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
+resp = WS.sendRequest(findTestObject('API/SOAP/Calculator/Add'))
 
-WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/')
+String xml = resp.responseBodyContent
 
-WebUI.setText(findTestObject('Page_OrangeHRM/input_LOGIN Panel_txtUsername'), 'Admin')
+def value = new XmlSlurper().parseText(xml)
 
-WebUI.setEncryptedText(findTestObject('Page_OrangeHRM/input_Username_txtPassword'), 'hUKwJTbofgPU9eVlw/CnDQ==')
+println('  >>  value is : ' + value)
 
-WebUI.takeScreenshot('Screenshots/screenshot.jpg')
+GlobalVariable.AddResult = value
 
-WebUI.click(findTestObject('Page_OrangeHRM/input_Password_Submit'))
-
-WebUI.verifyTextPresent('Welcome', false)
-
-WebUI.closeBrowser()
+WS.sendRequestAndVerify(findTestObject('API/SOAP/Calculator/Multiply'))
 

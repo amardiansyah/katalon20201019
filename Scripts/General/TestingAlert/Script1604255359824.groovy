@@ -17,17 +17,45 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/')
+WebUI.navigateToUrl('http://the-internet.herokuapp.com/javascript_alerts')
 
-WebUI.setText(findTestObject('Page_OrangeHRM/input_LOGIN Panel_txtUsername'), 'Admin')
+WebUI.click(findTestObject('Page_The Internet/button_Click for JS Alert'))
 
-WebUI.setEncryptedText(findTestObject('Page_OrangeHRM/input_Username_txtPassword'), 'hUKwJTbofgPU9eVlw/CnDQ==')
+WebUI.verifyAlertPresent(4)
 
-WebUI.takeScreenshot('Screenshots/screenshot.jpg')
+WebUI.delay(2)
 
-WebUI.click(findTestObject('Page_OrangeHRM/input_Password_Submit'))
+WebUI.acceptAlert()
 
-WebUI.verifyTextPresent('Welcome', false)
+WebUI.verifyTextPresent('You successfuly clicked an alert', false)
+
+WebUI.delay(2)
+
+WebUI.click(findTestObject('Page_The Internet/button_Click for JS Confirm'))
+
+WebUI.verifyAlertPresent(4)
+
+WebUI.delay(2)
+
+WebUI.dismissAlert()
+
+WebUI.verifyTextPresent('You clicked: Cancel', false)
+
+WebUI.delay(2)
+
+WebUI.click(findTestObject('Page_The Internet/button_Click for JS Prompt'))
+
+WebUI.verifyAlertPresent(4)
+
+WebUI.delay(2)
+
+WebUI.setAlertText('Automation')
+
+WebUI.acceptAlert()
+
+WebUI.delay(2)
+
+WebUI.verifyTextPresent('You entered: Automation', false)
 
 WebUI.closeBrowser()
 

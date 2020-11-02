@@ -15,19 +15,19 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
+WS.sendRequest(findTestObject('API/SOAP/Calculator/Add'))
 
-WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/')
+WS.sendRequest(findTestObject('API/SOAP/Calculator/Divide'))
 
-WebUI.setText(findTestObject('Page_OrangeHRM/input_LOGIN Panel_txtUsername'), 'Admin')
+WS.sendRequest(findTestObject('API/SOAP/Calculator/Multiply'))
 
-WebUI.setEncryptedText(findTestObject('Page_OrangeHRM/input_Username_txtPassword'), 'hUKwJTbofgPU9eVlw/CnDQ==')
+WS.sendRequest(findTestObject('API/SOAP/Calculator/Subtract'))
 
-WebUI.takeScreenshot('Screenshots/screenshot.jpg')
+WS.sendRequest(findTestObject('API/REST/CreateUser'))
 
-WebUI.click(findTestObject('Page_OrangeHRM/input_Password_Submit'))
+WS.sendRequest(findTestObject('API/REST/DeleteUser'))
 
-WebUI.verifyTextPresent('Welcome', false)
+WS.sendRequest(findTestObject('API/REST/GetCustomerDetails'))
 
-WebUI.closeBrowser()
+WS.sendRequest(findTestObject('API/REST/UpdateUser', [('username') : GlobalVariable.FirstName]))
 

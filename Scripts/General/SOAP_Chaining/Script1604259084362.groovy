@@ -15,19 +15,17 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
+resp = WS.sendRequest(findTestObject('API/SOAP/CountryAPI/ListOfCountryNamesByName'))
+String xml = resp.getResponseBodyContent()
+def dataValue = new XmlSlurper().parseText(xml)
+println(' \n\n  data valu is \n\n ' + dataValue)
+def value = dataValue.ListOfCountryNamesByNameResult.tCountryCodeAndName[12].sISOCode.text()
 
-WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/')
+//ListOfCountryNamesByCodeResponse.ListOfCountryNamesByCodeResult.tCountryCodeAndName[224].sName
+//ListOfCountryNamesByNameResponse.ListOfCountryNamesByNameResult.tCountryCodeAndName[17]
+println('  >> value extracted is : ' + value)
 
-WebUI.setText(findTestObject('Page_OrangeHRM/input_LOGIN Panel_txtUsername'), 'Admin')
+GlobalVariable.CountryCode = value
+println "  >  GlobalVariable.CountryCode : "+GlobalVariable.CountryCode
 
-WebUI.setEncryptedText(findTestObject('Page_OrangeHRM/input_Username_txtPassword'), 'hUKwJTbofgPU9eVlw/CnDQ==')
-
-WebUI.takeScreenshot('Screenshots/screenshot.jpg')
-
-WebUI.click(findTestObject('Page_OrangeHRM/input_Password_Submit'))
-
-WebUI.verifyTextPresent('Welcome', false)
-
-WebUI.closeBrowser()
-
+WS.sendRequestAndVerify(findTestObject('API/SOAP/CountryAPI/CapitalCity', [('countryCode') : GlobalVariable.CountryCode]))

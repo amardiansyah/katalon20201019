@@ -15,19 +15,9 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
+not_run: CucumberKW.runFeatureFile('Include/features/Login_with_data.feature')
 
-WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/')
+not_run: CucumberKW.runFeatureFolder('Include/features/')
 
-WebUI.setText(findTestObject('Page_OrangeHRM/input_LOGIN Panel_txtUsername'), 'Admin')
-
-WebUI.setEncryptedText(findTestObject('Page_OrangeHRM/input_Username_txtPassword'), 'hUKwJTbofgPU9eVlw/CnDQ==')
-
-WebUI.takeScreenshot('Screenshots/screenshot.jpg')
-
-WebUI.click(findTestObject('Page_OrangeHRM/input_Password_Submit'))
-
-WebUI.verifyTextPresent('Welcome', false)
-
-WebUI.closeBrowser()
+CucumberKW.runFeatureFileWithTags('Include/features/Login_with_tag.feature', ((['@smoke', '@valid', '@invalid']) as String[]))
 

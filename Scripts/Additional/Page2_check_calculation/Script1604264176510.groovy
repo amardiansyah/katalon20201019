@@ -14,20 +14,22 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/')
+WebUI.navigateToUrl('https://testing.lab.glcnetworks.com/page2/')
 
-WebUI.setText(findTestObject('Page_OrangeHRM/input_LOGIN Panel_txtUsername'), 'Admin')
+def item_1_qty = Double.parseDouble(WebUI.getText(findTestObject('Page2/td_item-1-qty')))
 
-WebUI.setEncryptedText(findTestObject('Page_OrangeHRM/input_Username_txtPassword'), 'hUKwJTbofgPU9eVlw/CnDQ==')
+def item_1_price = Double.parseDouble(WebUI.getText(findTestObject('Page2/td_item-1-price')))
 
-WebUI.takeScreenshot('Screenshots/screenshot.jpg')
+def item_1_total = Double.parseDouble(WebUI.getText(findTestObject('Page2/td_item-1-total')))
 
-WebUI.click(findTestObject('Page_OrangeHRM/input_Password_Submit'))
-
-WebUI.verifyTextPresent('Welcome', false)
+if ((item_1_qty * item_1_price) == item_1_total) {
+    assert true  
+} else {
+    assert false : 'Calculation is wrong'
+}
 
 WebUI.closeBrowser()
-

@@ -14,28 +14,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
 
-//open browser
-WebUI.openBrowser('')
 
-//open url
-WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/')
-
-WebUI.click(findTestObject('orangehrm/login_page/span_Username'))
-
-WebUI.setText(findTestObject('orangehrm/login_page/input_LOGIN Panel_txtUsername'), 'Admin')
-
-WebUI.setEncryptedText(findTestObject('orangehrm/login_page/input_Username_txtPassword'), 
-    'hUKwJTbofgPU9eVlw/CnDQ==')
-
-WebUI.takeScreenshot()
-
-WebUI.click(findTestObject('orangehrm/login_page/input_Password_Submit'))
-
-WebUI.click(findTestObject('orangehrm/login_page/a_Welcome'))
-
-WebUI.click(findTestObject('orangehrm/login_page/a_Logout'))
-
-WebUI.closeBrowser()
+println "\n print from Test Case TestingListener \n"
 

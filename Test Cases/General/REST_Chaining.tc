@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>login</name>
+   <name>REST_Chaining</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>be97a898-f9aa-4ff6-84a4-c547132ed7bf</testCaseGuid>
+   <testCaseGuid>899db7d6-5b9b-4c37-ac1a-481bd715de8b</testCaseGuid>
 </TestCaseEntity>

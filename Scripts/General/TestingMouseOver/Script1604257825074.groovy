@@ -17,17 +17,18 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/')
+WebUI.navigateToUrl('https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_hover')
 
-WebUI.setText(findTestObject('Page_OrangeHRM/input_LOGIN Panel_txtUsername'), 'Admin')
+WebUI.waitForElementClickable(findTestObject('w3sMouseover/Page_Tryit Editor v36/a_w3schoolscom'), 5)
 
-WebUI.setEncryptedText(findTestObject('Page_OrangeHRM/input_Username_txtPassword'), 'hUKwJTbofgPU9eVlw/CnDQ==')
+WebUI.mouseOver(findTestObject('w3sMouseover/Page_Tryit Editor v36/a_w3schoolscom'))
 
-WebUI.takeScreenshot('Screenshots/screenshot.jpg')
+WebUI.delay(2)
 
-WebUI.click(findTestObject('Page_OrangeHRM/input_Password_Submit'))
+WebUI.waitForElementClickable(findTestObject('w3sMouseover/Page_Tryit Editor v36/a_wikipediaorg'), 0)
 
-WebUI.verifyTextPresent('Welcome', false)
+WebUI.mouseOver(findTestObject('w3sMouseover/Page_Tryit Editor v36/a_wikipediaorg'))
+
+WebUI.delay(2)
 
 WebUI.closeBrowser()
-

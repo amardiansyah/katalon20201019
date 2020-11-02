@@ -15,19 +15,15 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
+response1 = WS.sendRequest(findTestObject('API/REST/GetCustomerDetails'))
 
-WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/')
+def slurper = new groovy.json.JsonSlurper()
+def result = slurper.parseText(response1.getResponseBodyContent())
+def value = result.data[5].first_name
 
-WebUI.setText(findTestObject('Page_OrangeHRM/input_LOGIN Panel_txtUsername'), 'Admin')
+println '  value is :'+value
 
-WebUI.setEncryptedText(findTestObject('Page_OrangeHRM/input_Username_txtPassword'), 'hUKwJTbofgPU9eVlw/CnDQ==')
-
-WebUI.takeScreenshot('Screenshots/screenshot.jpg')
-
-WebUI.click(findTestObject('Page_OrangeHRM/input_Password_Submit'))
-
-WebUI.verifyTextPresent('Welcome', false)
-
-WebUI.closeBrowser()
+GlobalVariable.FirstName = value
+	
+WS.sendRequestAndVerify(findTestObject('API/REST/UpdateUser_with_variable', [('username') : GlobalVariable.FirstName]))
 
