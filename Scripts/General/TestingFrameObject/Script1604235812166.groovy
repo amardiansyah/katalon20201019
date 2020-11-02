@@ -22,7 +22,7 @@ WebUI.navigateToUrl('https://www.selenium.dev/selenium/docs/api/java/')
 
 WebUI.click(findTestObject('Object Repository/Page_Overview/a_com.thoughtworks.selenium'))
 
-WebUI.click(findTestObject('Object Repository/Page_Overview/a_BrowserConfigurationOptions'))
+WebUI.click(findTestObject('Page_Overview/a_BrowserConfigurationOptions'))
 
 WebUI.click(findTestObject('Object Repository/Page_BrowserConfigurationOptions/span_Fields'))
 

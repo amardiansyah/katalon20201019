@@ -4,17 +4,23 @@
    <name>input_Password_Submit</name>
    <tag></tag>
    <elementGuidId>f84229d9-0d5d-4851-b6c2-eac0c7dfc078</elementGuidId>
+   <imagePath></imagePath>
    <selectorCollection>
       <entry>
-         <key>IMAGE</key>
+         <key>XPATH</key>
+         <value>//input[@id='btnLogin']</value>
       </entry>
       <entry>
          <key>CSS</key>
          <value>#btnLogin</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@id='btnLogin']</value>
+         <key>BASIC</key>
+         <value>//*[@type = 'submit' and @name = 'Submit' and @id = 'btnLogin']</value>
+      </entry>
+      <entry>
+         <key>IMAGE</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
